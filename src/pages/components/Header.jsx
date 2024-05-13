@@ -1,18 +1,18 @@
 import React from "react";
 import Logo from "/logo.svg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
-  const Location = useLocation();
+  const location = useLocation();
   const Navigate = useNavigate();
   function pathMathRoute(route) {
-    if (route === Location.pathname) {
+    if (route === location.pathname) {
       return true;
     }
   }
   return (
     <div className="bg-white border-b shadow-sm sticky top-0 z-50">
-      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto ">
+      <header className="flex justify-between items-center px-3 sm:px-1 max-w-6xl mx-auto ">
         <div>
           <img
             src={Logo}
@@ -26,7 +26,7 @@ export default function Header() {
             <li
               className={`py-3 text-sm font-semibold cursor-pointer text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMathRoute("/") &&
-                "font-extrabold border-b-[3px] border-b-red-700 text-black"
+                "!font-extrabold !border-b-[3px] !border-b-red-700 !text-black"
               }`}
               onClick={() => Navigate("/")}
             >
@@ -36,7 +36,7 @@ export default function Header() {
             <li
               className={`py-3 text-sm font-semibold cursor-pointer text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMathRoute("/offers") &&
-                "font-extrabold border-b-[3px] border-b-red-700 text-black"
+                "!font-extrabold !border-b-[3px] !border-b-red-700 !text-black"
               }`}
               onClick={() => Navigate("/offers")}
             >
@@ -45,7 +45,7 @@ export default function Header() {
             <li
               className={`py-3 text-sm font-semibold cursor-pointer text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMathRoute("/sign-in") &&
-                "font-extrabold border-b-[3px] border-b-red-700 text-black"
+                "!font-extrabold !border-b-[3px] !border-b-red-700 !text-black"
               }`}
               onClick={() => Navigate("/sign-in")}
             >
